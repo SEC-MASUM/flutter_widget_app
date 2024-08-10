@@ -134,6 +134,7 @@ class HomeActivity extends StatelessWidget {
           ],
         ),
       ),
+      //! endDrawer not working
       endDrawer: Drawer(
         child: ListView(
           children: [
