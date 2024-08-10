@@ -1,24 +1,7 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_widget_app/floating_action_button/floating_action_button_widget.dart';
 
-void main() {
-  runApp(const MyApp());
-}
-
-class MyApp extends StatelessWidget {
-  const MyApp({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return const MaterialApp(
-      home: FloatingActionButtonWidget(),
-    );
-  }
-}
-
-class HomeActivity extends StatelessWidget {
-  const HomeActivity({super.key});
+class FloatingActionButtonWidget extends StatelessWidget {
+  const FloatingActionButtonWidget({super.key});
 
   MySnackbar(message, context) {
     return ScaffoldMessenger.of(context)
