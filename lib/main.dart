@@ -32,18 +32,14 @@ class HomeActivity extends StatelessWidget {
       appBar: AppBar(
         title: const Text("Inventory App"),
       ),
-      body: Container(
-        width: 350,
-        height: 350,
-        alignment: Alignment.topLeft,
-        margin: EdgeInsets.all(30),
-        padding: EdgeInsets.all(20),
-        decoration: BoxDecoration(
-          color: Colors.yellow,
-          border: Border.all(color: Colors.blue, width: 6)
-        ),
-        child: Image.network("https://cdn.iconscout.com/icon/free/png-512/free-flutter-2038877-1720090.png", width: 200, height: 200,),
-      ),
+      body: Row(
+        mainAxisAlignment: MainAxisAlignment.spaceAround,
+        children: [
+          Container(width: 100,height: 100, decoration: BoxDecoration(color: Colors.white), child: Image.network("https://cdn.iconscout.com/icon/free/png-512/free-flutter-2038877-1720090.png")),
+          Container(width: 100,height: 100, decoration: BoxDecoration(color: Colors.white), child: Image.network("https://cdn.iconscout.com/icon/free/png-512/free-flutter-2038877-1720090.png")),
+          Container(width: 100,height: 100, decoration: BoxDecoration(color: Colors.white), child: Image.network("https://cdn.iconscout.com/icon/free/png-512/free-flutter-2038877-1720090.png")),
+        ],
+      )
     );
   }
 }
