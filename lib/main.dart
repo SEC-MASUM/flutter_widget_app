@@ -28,6 +28,24 @@ class HomeActivity extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+
+    ButtonStyle textButtonStyle = TextButton.styleFrom(
+      foregroundColor: Colors.blue
+    );
+
+    ButtonStyle elevatedButtonStyle = ElevatedButton.styleFrom(
+      backgroundColor: Colors.green,
+      foregroundColor: Colors.white,
+      shape: RoundedRectangleBorder(
+        borderRadius: BorderRadius.all(Radius.circular(10.0)),
+      ),
+    );
+
+    ButtonStyle outlineButtonStyle = OutlinedButton.styleFrom(
+        side: BorderSide(color: Colors.pink),
+      foregroundColor: Colors.black
+    );
+
     return Scaffold(
       appBar: AppBar(
         title: const Text("Inventory App"),
@@ -35,9 +53,9 @@ class HomeActivity extends StatelessWidget {
       body: Row(
         mainAxisAlignment: MainAxisAlignment.spaceAround,
         children: [
-          Container(width: 100,height: 100, decoration: BoxDecoration(color: Colors.white), child: Image.network("https://cdn.iconscout.com/icon/free/png-512/free-flutter-2038877-1720090.png")),
-          Container(width: 100,height: 100, decoration: BoxDecoration(color: Colors.white), child: Image.network("https://cdn.iconscout.com/icon/free/png-512/free-flutter-2038877-1720090.png")),
-          Container(width: 100,height: 100, decoration: BoxDecoration(color: Colors.white), child: Image.network("https://cdn.iconscout.com/icon/free/png-512/free-flutter-2038877-1720090.png")),
+          TextButton(onPressed: (){MySnackbar("I am Text Button", context);}, child: Text("Text Button"), style: textButtonStyle,),
+          ElevatedButton(onPressed: (){MySnackbar("I am Elevated Button", context);}, child: Text("Elevated Button"), style: elevatedButtonStyle,),
+          OutlinedButton(onPressed: (){MySnackbar("I am Outline Button", context);}, child: Text("Outline Button"), style: outlineButtonStyle,),
         ],
       )
     );
