@@ -8,24 +8,8 @@ import 'package:flutter_widget_app/tab_bar/fragment/person_fragment.dart';
 import 'package:flutter_widget_app/tab_bar/fragment/search_fragment.dart';
 import 'package:flutter_widget_app/tab_bar/fragment/setting_fragment.dart';
 
-void main() {
-  runApp(const MyApp());
-}
-
-class MyApp extends StatelessWidget {
-  const MyApp({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return const MaterialApp(
-      home: HomeActivity(),
-    );
-  }
-}
-
-class HomeActivity extends StatelessWidget {
-  const HomeActivity({super.key});
-
+class TabBarTabView extends StatelessWidget {
+  const TabBarTabView({super.key});
 
   @override
   Widget build(BuildContext context) {
