@@ -1,52 +1,42 @@
 import 'package:flutter/material.dart';
 
-void main() {
-  runApp(const MyApp());
-}
-
-class MyApp extends StatelessWidget {
-  const MyApp({super.key});
+class ListViewBuilderWithGestureDetector extends StatefulWidget {
+   const ListViewBuilderWithGestureDetector({super.key});
 
   @override
-  Widget build(BuildContext context) {
-    return MaterialApp(
-      home: HomeActivity(),
-    );
-  }
+  State<ListViewBuilderWithGestureDetector> createState() => _ListViewBuilderWithGestureDetectorState();
 }
 
-class HomeActivity extends StatelessWidget {
-  HomeActivity({super.key});
-
+class _ListViewBuilderWithGestureDetectorState extends State<ListViewBuilderWithGestureDetector> {
   var MyItems = [
     {
       "img":
-          "https://img.freepik.com/free-photo/mesmerizing-view-silhouette-tree-savanna-plains-sunset_181624-18108.jpg",
+      "https://img.freepik.com/free-photo/mesmerizing-view-silhouette-tree-savanna-plains-sunset_181624-18108.jpg",
       "title": "Image 1"
     },
     {
       "img":
-          "https://img.freepik.com/free-photo/mesmerizing-view-silhouette-tree-savanna-plains-sunset_181624-18108.jpg",
+      "https://img.freepik.com/free-photo/mesmerizing-view-silhouette-tree-savanna-plains-sunset_181624-18108.jpg",
       "title": "Image 2"
     },
     {
       "img":
-          "https://img.freepik.com/free-photo/mesmerizing-view-silhouette-tree-savanna-plains-sunset_181624-18108.jpg",
+      "https://img.freepik.com/free-photo/mesmerizing-view-silhouette-tree-savanna-plains-sunset_181624-18108.jpg",
       "title": "Image 3"
     },
     {
       "img":
-          "https://img.freepik.com/free-photo/mesmerizing-view-silhouette-tree-savanna-plains-sunset_181624-18108.jpg",
+      "https://img.freepik.com/free-photo/mesmerizing-view-silhouette-tree-savanna-plains-sunset_181624-18108.jpg",
       "title": "Image 4"
     },
     {
       "img":
-          "https://img.freepik.com/free-photo/mesmerizing-view-silhouette-tree-savanna-plains-sunset_181624-18108.jpg",
+      "https://img.freepik.com/free-photo/mesmerizing-view-silhouette-tree-savanna-plains-sunset_181624-18108.jpg",
       "title": "Image 5"
     },
     {
       "img":
-          "https://img.freepik.com/free-photo/mesmerizing-view-silhouette-tree-savanna-plains-sunset_181624-18108.jpg",
+      "https://img.freepik.com/free-photo/mesmerizing-view-silhouette-tree-savanna-plains-sunset_181624-18108.jpg",
       "title": "Image 6"
     },
   ];
