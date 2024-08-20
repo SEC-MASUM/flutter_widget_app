@@ -26,60 +26,95 @@ class MyApp extends StatelessWidget {
 class HomeActivity extends StatelessWidget {
   const HomeActivity({super.key});
 
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: const Text("My App"),
+      ),
+      body: Center(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            ElevatedButton(
+              onPressed: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => const Activity1("From Home to Activity 1"),
+                  ),
+                );
+              },
+              child: const Text("Go Activity 1"),
+            ),
+            ElevatedButton(
+              onPressed: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => const Activity2("From Home to Activity 2"),
+                  ),
+                );
+              },
+              child: const Text("Go Activity 2"),
+            ),
+          ],
+        ),
+      ),
+    );
+  }
+}
+
+class Activity1 extends StatelessWidget {
+  final String appBarTitle;
+  const Activity1(
+    this.appBarTitle, {
+    super.key,
+  });
 
   @override
   Widget build(BuildContext context) {
-    return DefaultTabController(
-      length: 8,
-      child: Scaffold(
-        appBar: AppBar(
-          title: const Text("My App"),
-          bottom: const TabBar(
-            isScrollable: true,
-            tabs: [
-              Tab(icon: Icon(Icons.home), text: "Home"),
-              Tab(
-                icon: Icon(Icons.search),
-                text: "Search",
+    return Scaffold(
+      appBar: AppBar(
+        title: Text(appBarTitle),
+      ),
+      body: Center(
+        child: ElevatedButton(
+            onPressed: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => const Activity2("From Activity1 to Activity2"),
+                ),
+              );
+            },
+            child: const Text("Go to Activity 2")),
+      ),
+    );
+  }
+}
+
+class Activity2 extends StatelessWidget {
+  final String appBarTitle;
+  const Activity2(this.appBarTitle, {super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: Text(appBarTitle),
+      ),
+      body: Center(
+        child: ElevatedButton(
+          onPressed: () {
+            Navigator.push(
+              context,
+              MaterialPageRoute(
+                builder: (context) => const Activity1("From Activity2 to Activity1"),
               ),
-              Tab(
-                icon: Icon(Icons.settings),
-                text: "Setting",
-              ),
-              Tab(
-                icon: Icon(Icons.email),
-                text: "Email",
-              ),
-              Tab(
-                icon: Icon(Icons.contact_mail),
-                text: "Contact",
-              ),
-              Tab(
-                icon: Icon(Icons.person),
-                text: "Person",
-              ),
-              Tab(
-                icon: Icon(Icons.access_alarm),
-                text: "Alarm",
-              ),
-              Tab(
-                icon: Icon(Icons.account_balance),
-                text: "Balance",
-              ),
-            ],
-          ),
-        ),
-        body: const TabBarView(
-          children: [
-            HomeFragment(),
-            SearchFragment(),
-            SettingFragment(),
-            EmailFragment(),
-            ContactFragment(),
-            PersonFragment(),
-            AlarmFragment(),
-            BalanceFragment(),
-          ],
+            );
+          },
+          child: const Text("Go to Activity 1"),
         ),
       ),
     );
