@@ -1,32 +1,15 @@
 import 'package:flutter/material.dart';
 
-void main() {
-  runApp(const MyApp());
-}
-
-class MyApp extends StatelessWidget {
-  const MyApp({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return MaterialApp(
-      home: HomeActivity(),
-    );
-  }
-}
-
-class HomeActivity extends StatefulWidget {
-  const HomeActivity({super.key});
-
+class StateLifecycle extends StatefulWidget {
+  const StateLifecycle({super.key});
 
   /// Number 01
   @override
-  State<HomeActivity> createState() => _HomeActivityState();
+  State<StateLifecycle> createState() => _StateLifecycleState();
 }
 
-class _HomeActivityState extends State<HomeActivity> {
+class _StateLifecycleState extends State<StateLifecycle> {
   int countNumber = 0;
-
 
   /// Number 02
   @override
